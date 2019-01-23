@@ -27,6 +27,12 @@ module.exports = {
         icon: './src/favicon.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: "2009260100.1677ed0.e04bb8f7df444235a521369e3f4d15b4"
+      }
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-favicon`,
     `gatsby-plugin-react-helmet`,

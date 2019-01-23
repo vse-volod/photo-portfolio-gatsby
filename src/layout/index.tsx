@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 interface LayoutProps {
   className?: string;
-  children: JSX.Element[];
+  children: any;
 }
 
 interface StaticQueryProps {

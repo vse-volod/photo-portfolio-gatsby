@@ -1,14 +1,44 @@
 import React from 'react';
 import Layout from '../layout';
+import { graphql } from 'gatsby';
+import Gallery from '../components/Gallery';
 
-export default class Main extends React.PureComponent<{}, {}> {
-  public render() {
-    return (
-      <Layout>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-      </Layout>
-    );
+export default ({ data }) => {
+  return (
+    <Layout>
+      <Gallery posts={data.allInstagramContent} />
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query InstagramPosts {
+    allInstagramContent {
+      edges {
+        node {
+          link
+          caption {
+            text
+          }
+          localImage {
+            childImageSharp {
+              fluid(maxHeight: 500, maxWidth: 500, quality: 50) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+          images {
+            standard_resolution {
+              width
+              height
+              url
+            }
+            low_resolution {
+              url
+            }
+          }
+        }
+      }
+    }
   }
-}
+`;
