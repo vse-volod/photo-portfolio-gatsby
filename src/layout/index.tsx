@@ -34,15 +34,15 @@ export default class Layout extends React.Component<LayoutProps, {}> {
           const { children } = this.props;
 
           return (
-            <>
+            <React.Fragment>
               <Helmet
                 title={siteMetadata.title}
                 meta={[
                   {
                     name: 'description',
-                    content: 'Gatsby TypeScript Boilerplate Starter',
+                    content: 'Julia Photo Portfolio',
                   },
-                  { name: 'keywords', content: 'Gatsby, TypeScript, Starter' },
+                  { name: 'keywords', content: 'Photo, Instagram' },
                 ]}
               >
                 <html lang="en" />
@@ -58,7 +58,7 @@ export default class Layout extends React.Component<LayoutProps, {}> {
               >
                 {children}
               </div>
-            </>
+            </React.Fragment>
           );
         }}
       />

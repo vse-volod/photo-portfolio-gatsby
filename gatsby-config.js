@@ -4,7 +4,7 @@ const mqPacker = require('css-mqpacker');
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby TypeScript Boilerplate',
+    title: 'Julia Photo Porfolio',
     siteUrl: `https://gatsby-typescript-boilerplate.netlify.com`,
   },
   plugins: [
