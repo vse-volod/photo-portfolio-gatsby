@@ -1,33 +1,33 @@
+import Img from 'gatsby-image';
+import { chunk, sum } from 'lodash';
 import React from 'react';
-import styled from 'styled-components';
-import Image from 'gatsby-image';
+import { Box } from 'rebass';
 
-const Container = styled('div')`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 auto;
-`;
+const Gallery = ({ images, itemsPerRow }: any) => {
+  // Split images into groups of the given size
+  const rows = chunk(images, itemsPerRow);
+  console.log(images);
 
-export default ({ posts }) => (
-  <Container className="grid">
-    {posts.edges.map((item: any, i: any) => {
-      let captionText = item.node.caption
-        ? deleteTags(item.node.caption.text)
-        : 'Instagram Post';
-      //Check for missing images
-      return item.node.localImage ? (
-        <Image
-          fluid={item.node.localImage.childImageSharp.fluid}
-          key={i}
-          //   caption={captionText}
-        />
-      ) : (
-        <div />
-      );
-    })}
-  </Container>
-);
+  return (
+    <div>
+      {rows.map(row => {
+        // Sum aspect ratios of images in the given row
+        const rowAspectRatioSum = sum(
+          row.map((image: any) => image.aspectRatio)
+        );
 
-function deleteTags(text: any) {
-  return text.replace(/^(\s*#\w+\s*)+$/gm, '');
-}
+        return row.map((image: any) => (
+          <Box
+            key={image.id}
+            as={Img}
+            fluid={image}
+            width={`${(image.aspectRatio / rowAspectRatioSum) * 100}%`}
+            style={{ display: 'inline-block' }}
+          />
+        ));
+      })}
+    </div>
+  );
+};
+
+export default Gallery;
