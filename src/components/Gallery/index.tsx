@@ -30,7 +30,6 @@ const Gallery = ({
         sum(rowAspectRatios)
       )
   );
-  console.log(images);
 
   return (
     <>

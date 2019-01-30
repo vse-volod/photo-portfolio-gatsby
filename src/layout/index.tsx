@@ -10,6 +10,9 @@ const LayoutWrapper = styled.div`
   div:hover {
     filter: brightness(65.5%);
   }
+  @media (max-width: 1024px) {
+    padding: 0px 10px;
+  }
 `;
 
 interface LayoutProps {
