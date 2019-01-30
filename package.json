@@ -34,9 +34,11 @@
     "typescript": "^3.1.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.120",
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
     "@types/react-helmet": "^5.0.7",
+    "@types/rebass": "^0.3.4",
     "@types/styled-components": "^4.1.6",
     "autoprefixer": "^9.3.1",
     "css-mqpacker": "^7.0.0",

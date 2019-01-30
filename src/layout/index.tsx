@@ -2,6 +2,15 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Header from '../components/Header';
+import styled from 'styled-components';
+
+const LayoutWrapper = styled.div`
+  margin: 0 auto;
+  padding: 0px 75px;
+  div:hover {
+    filter: brightness(65.5%);
+  }
+`;
 
 interface LayoutProps {
   className?: string;
@@ -48,16 +57,7 @@ export default class Layout extends React.Component<LayoutProps, {}> {
                 <html lang="en" />
               </Helmet>
               <Header siteTitle={siteMetadata.title} />
-              <div
-                style={{
-                  margin: '0 auto',
-                  maxWidth: 960,
-                  padding: '0px 1.0875rem 1.45rem',
-                  paddingTop: 0,
-                }}
-              >
-                {children}
-              </div>
+              <LayoutWrapper>{children}</LayoutWrapper>
             </React.Fragment>
           );
         }}

@@ -7,7 +7,7 @@ export default ({ data }: any) => {
   return (
     <Layout>
       <Gallery
-        itemsPerRow={2}
+        itemsPerRow={[2, 3]}
         images={data.allInstagramContent.edges.map(({ node }: any) => ({
           ...node.localImage.childImageSharp.fluid,
         }))}
