@@ -17,14 +17,14 @@ const carouselFormatters = {
     views: { [key: string]: any }[];
   }) => `Mutasd a(z) ${currentIndex}. képet a(z) ${views.length} közül`,
 
-  getNextTitle: () => 'Következő (jobbra nyíl)',
-  getPrevTitle: () => 'Előző (balra nyíl)',
+  getNextTitle: () => 'Следующая',
+  getPrevTitle: () => 'Предыдущая',
 
-  getCloseLabel: () => 'Bezárás (esc)',
+  getCloseLabel: () => 'Закрыть',
   getFullscreenLabel: ({ isFullscreen }: { isFullscreen: boolean }) =>
     isFullscreen
-      ? 'Kilépés a teljes képernyős nézetből (f)'
-      : 'Teljes képernyőre váltás (f)',
+      ? 'Выйти из полноэкранного режима (f)'
+      : 'Полноэкранный режим (f)',
 };
 
 export default carouselFormatters;

@@ -2,7 +2,14 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Header from '../components/Header';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+//hack to get images in lightbox centered
+const GlobalStyle = createGlobalStyle`
+  img {
+    max-height: 75vh!important;
+  }
+`;
 
 const LayoutWrapper = styled.div`
   margin: 0 auto;
@@ -47,6 +54,7 @@ export default class Layout extends React.Component<LayoutProps, {}> {
 
           return (
             <React.Fragment>
+              <GlobalStyle />
               <Helmet
                 title={siteMetadata.title}
                 meta={[
