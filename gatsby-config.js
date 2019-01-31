@@ -5,7 +5,10 @@ const mqPacker = require('css-mqpacker');
 module.exports = {
   siteMetadata: {
     title: 'Julia Photo Porfolio',
-    siteUrl: `https://gatsby-typescript-boilerplate.netlify.com`,
+    description:
+      'Сайт портфолио работ фотографа Юлии. Fashion фотография в Москве',
+    url: 'https://www.juliaph.ru',
+    keywords: 'Photo, Instagram, Фотограф в Москве, Fashion Фотограф',
   },
   plugins: [
     {
@@ -30,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram-all`,
       options: {
-        access_token: "2009260100.1677ed0.e04bb8f7df444235a521369e3f4d15b4"
-      }
+        access_token: '2009260100.1677ed0.e04bb8f7df444235a521369e3f4d15b4',
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-favicon`,

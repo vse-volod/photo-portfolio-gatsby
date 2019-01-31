@@ -62,10 +62,14 @@ export default class Layout extends React.Component<LayoutProps, {}> {
                     name: 'description',
                     content: 'Julia Photo Portfolio',
                   },
-                  { name: 'keywords', content: 'Photo, Instagram' },
+                  {
+                    name: 'keywords',
+                    content:
+                      'Photo, Instagram, Фотограф в Москве, Fashion Фотограф',
+                  },
                 ]}
               >
-                <html lang="en" />
+                <html lang="ru" />
               </Helmet>
               <Header siteTitle={siteMetadata.title} />
               <LayoutWrapper>{children}</LayoutWrapper>
