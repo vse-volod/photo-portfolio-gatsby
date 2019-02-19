@@ -7,7 +7,7 @@ import SEO from '../components/SEO';
 export default ({ data }: any) => {
   return (
     <Layout>
-      <SEO />
+      {/* <SEO /> */}
       <Gallery
         itemsPerRow={[2, 3]}
         images={data.allInstagramContent.edges.map(({ node }: any) => ({

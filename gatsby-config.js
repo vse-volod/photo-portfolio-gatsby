@@ -9,6 +9,7 @@ module.exports = {
       'Сайт портфолио работ фотографа Юлии. Fashion фотография в Москве',
     url: 'https://www.juliaph.ru',
     keywords: 'Photo, Instagram, Фотограф в Москве, Fashion Фотограф',
+    titleTemplate: 'Gatsby Photo Portfolio',
   },
   plugins: [
     {
